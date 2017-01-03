@@ -1,2 +1,10 @@
+title: Mikun Pham, Front-End Developer
 name: Mikun Pham
+baseurl: ""
+twitter_username: phammikun
+github_username: mikunpham
+
 markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
