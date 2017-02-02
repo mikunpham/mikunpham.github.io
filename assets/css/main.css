@@ -7,7 +7,7 @@
 html, body {
 	margin: 0;
 	padding: 0;
-	font-family: 'Source Sans Pro', Helvetica, sans-serif;
+	font-family: 'Roboto', Helvetica, sans-serif;
 	font-weight: normal;
 	font-size: 16px;
 	-webkit-font-smoothing: antialiased;
@@ -20,7 +20,7 @@ img {
 }
 
 header {
-	font-family: 'Lora', Helvetica, serif;
+	font-family: 'Libre Baskerville', Helvetica, serif;
 	padding: 20px 0 16px;
 	border-bottom: 1px solid #dfdfdf;
 	text-align: center;
@@ -31,7 +31,7 @@ header .logo h1 {
 	padding: 0;
 	font-size: 2.5em;
 	font-weight: 400;
-	letter-spacing: 3px;
+	letter-spacing: 0.1em;
 }
 
 footer {
@@ -44,7 +44,8 @@ footer {
 footer p {
 	margin: 0;
 	font-size: 0.875em;
-	text-transform: uppercase;
+	font-weight: 300;
+	letter-spacing: 0.05em;
 }
 
 main {
@@ -54,7 +55,7 @@ main {
 
 .post {
 	text-align: center;
-	margin: 60px 0 40px;
+	margin: 60px 0 100px;
 }
 
 .post__thumb {
@@ -72,19 +73,35 @@ main {
 	-webkit-transform: translate(-50%, -50%);
 	-moz-transform: translate(-50%, -50%);
 	transform: translate(-50%, -50%);
+	-webkit-transition: transform 0.8s cubic-bezier(0.32, 0.27, 0.25, 1.13);
+	-moz-transition: transform 0.8s cubic-bezier(0.32, 0.27, 0.25, 1.13);
+	transition: transform 0.8s cubic-bezier(0.32, 0.27, 0.25, 1.13); 
+}
+
+.post__thumb:hover img {
+	-webkit-transform: translate(-50%, -50%) scale(1.15);
+	-moz-transform: translate(-50%, -50%) scale(1.15);
+	transform: translate(-50%, -50%) scale(1.15);
+	-webkit-transition: transform 0.8s cubic-bezier(0.32, 0.27, 0.25, 1.13);
+	-moz-transition: transform 0.8s cubic-bezier(0.32, 0.27, 0.25, 1.13);
+	transition: transform 0.8s cubic-bezier(0.32, 0.27, 0.25, 1.13); 
 }
 
 .post__title {
 	text-decoration: none;
 	color: rgba(38, 40, 43, 1);
-	font-family: 'Lora', Helvetica, serif;
-	font-size: 2.1em;
+	font-family: 'Libre Baskerville', Helvetica, serif;
+	font-size: 2em;
+	line-height: 40px;
 }
 
 .post__title:hover {
-	color: rgba(38, 40, 43, 0.7);
-	-webkit-transition: color 0.5s ease-in;
-	-moz-transition: color 0.5s ease-in;
-	transition: color 0.5s ease-in;
+	border-bottom: 1px solid #cba61c;
+}
+
+.post__date {
+	font-size: 0.85em;
+	font-weight: 300;
+	letter-spacing: 0.1em;
 }
 

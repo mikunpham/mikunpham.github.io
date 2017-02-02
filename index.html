@@ -13,6 +13,7 @@ tags:
 				<img src="{{ post.thumbnail }}" />
 			</div>
 		</a>
+		<p class="post__date">{{ post.date | date: '%B %d, %Y' }}</p>
 		<a class="post__title" href="{{ post.url }}">{{ post.title }}</a>
 	</div>
 {% endfor %}
