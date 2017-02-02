@@ -3,8 +3,18 @@ name: Mikun Pham
 baseurl: ""
 twitter_username: phammikun
 github_username: mikunpham
+url: "https://mikunpham.github.io"
 
 markdown: kramdown
 kramdown:
   input: GFM
   syntax_highlighter: rouge
+
+permalink: pretty
+
+exclude:
+  - .gitignore
+  - node_modules
+  - package.json
+  - README.md
+  - CNAME

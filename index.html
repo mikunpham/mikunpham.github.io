@@ -1,0 +1,18 @@
+---
+layout: default
+title: Hi, I'm Mikun Pham
+tags:
+    - Mikun Pham
+    - blog
+---
+
+{% for post in site.posts %}
+	<div class="post">
+		<a href="{{ post.url }}">
+			<div class="post__thumb">
+				<img src="{{ post.thumbnail }}" />
+			</div>
+		</a>
+		<a class="post__title" href="{{ post.url }}">{{ post.title }}</a>
+	</div>
+{% endfor %}
