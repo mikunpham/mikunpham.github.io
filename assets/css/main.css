@@ -150,7 +150,12 @@ main {
 }
 
 .article ul li {
-	list-style: none;
+	list-style: square;
+	list-style-position: inside;
+}
+
+.article ul li > * {
+	margin-left: -15px;
 }
 
 .article h2 {
