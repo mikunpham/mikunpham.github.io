@@ -168,3 +168,44 @@ main {
 	border-top: 1px dotted #8c8b8b;
 	margin-top: 2em;
 }
+
+@media screen and (max-width: 640px) {
+	header .logo h1 {
+		font-size: 1.8em;
+	}
+
+	.post {
+		margin: 40px 10px;
+	}
+
+	.post__thumb {
+		height: auto;
+		min-height: 150px;
+		margin-bottom: 10px;
+	}
+
+	.post__title {
+		font-size: 1.8em;
+	}
+
+	footer p {
+		font-size: 0.8em;
+	}
+
+	.article {
+		margin: 0 10px;
+		font-size: 1em;
+	}
+
+	.article__title h1 {
+		font-size: 1.8em;
+	}
+
+	.article h2 {
+		margin-top: 1.8em;
+	}
+
+	.article__date {
+		margin: 40px 0 20px;
+	}
+} 
