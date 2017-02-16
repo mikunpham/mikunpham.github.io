@@ -10,7 +10,7 @@ tags:
 
 **Memoization** is a programming technique which attempts to increase a function’s performance by caching its previously computed results.
 
-```javascript
+```js
 let count = 0
 const fibonacci = (n) => {
     count++
