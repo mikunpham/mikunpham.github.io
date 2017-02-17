@@ -89,4 +89,29 @@ console.log(fibonacci(10), count)  // 55 - 19
 
 _The same result -> Good!_
 
+## Generalize memoization function
+
+We can also genalize a memoization function, so that it can be used with other functions, not just `fibonacci` only.
+
+```javascript
+const memoizer = (func) => {
+    let memo = {}
+    return function() {
+        var args = Array.prototype.slice.call(arguments)
+        return (args in memo) ? memo[args] : ( memo[args] = func.apply(this, args) )
+    }   
+}
+
+const fibonacci = memoizer(function(n) {
+    return n < 2 ? n : fibonacci3(n - 1) + fibonacci3(n - 2)
+})
+
+const factorial = memoizer(function(n) {
+    return n < 2 ? 1 : n * factorial(n - 1)
+})
+
+console.log(fibonacci(10))  // Still 55 - 19 times if you add `count`
+console.log(factorial(10))  // 3628800 - factorial function and use memoization too!!!
+```
+
 
