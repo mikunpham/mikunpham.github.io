@@ -97,7 +97,7 @@ We can also genalize a memoization function, so that it can be used with other f
 const memoizer = (func) => {
     let memo = {}
     return function() {
-        var args = Array.prototype.slice.call(arguments)
+        let args = Array.prototype.slice.call(arguments)
         return (args in memo) ? memo[args] : ( memo[args] = func.apply(this, args) )
     }   
 }
