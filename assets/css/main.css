@@ -273,3 +273,6 @@ main {
 .highlight .vg { color: #008080 } /* Name.Variable.Global */
 .highlight .vi { color: #008080 } /* Name.Variable.Instance */
 .highlight .il { color: #009999 } /* Literal.Number.Integer.Long */
+code.highlighter-rouge { background: rgba(238, 238, 238, 1); padding: 2px 5px; color: rgba(77, 126, 222, 1); }
+code, kbd, pre, samp { font-size: 0.9em; line-height: 21px; }
+
