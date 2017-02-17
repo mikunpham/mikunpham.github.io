@@ -13,15 +13,7 @@ tags:
 
 Here is the traditional Fibonacci function:
 
-```javascript
-// normal way - recursive
-let count = 0
-const fibonacci = (n) => {
-    count++
-    return n < 2 ? n : fibonacci(n - 1) + fibonacci(n - 2)
-}
-console.log(fibonacci(10), count)  // 55 - 177
-```
+<script src="https://gist.github.com/mikunpham/6f4c2ec6bc79f54dc9209db2d8a13d2a.js"></script>
 
 We are using recursive method to calculate the sequence. This works, but the `fibonacci` function is called 177 times. That's maybe a small number, but what if we have to compute `fibonacci(50)` ?! That would take an insane number of times to calculate and give output result. You can try!
 
@@ -32,30 +24,7 @@ We can use Memoization by storing returned values of a function in previous call
 
 Here is the re-written code in memoization way:
 
-
-```javascript
-// Memoization way
-let count = 0
-const fibonacci = (() => {
-    let memo = {}
-    return function fib(n) {
-        count++
-        let result
-        if(n in memo) {
-            result = memo[n]
-        } else {
-            if(n < 2) {
-                result = n
-            } else {
-                result = fib(n - 1) + fib(n - 2)
-            }
-        }
-        memo[n] = result
-        return result
-    }
-})() // self-execution function
-console.log(fibonacci(10), count)  // 55 - 19
-```
+<script src="https://gist.github.com/mikunpham/8f46c96ba8e56dbe8ad4ec945c2cfe71.js"></script>
 
 Now, the function is called 19 times - a huge optimization. You can test with `fibonacci(50)`
 , it's much faster than the previous version.
@@ -73,19 +42,7 @@ Finally, we return the result.
 
 We can rewrite by using [Conditional (ternary) Operator](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Conditional_Operator) to have a cleaner version:
 
-```javascript
-let count = 0
-const fibonacci = (() => {
-    let memo = {}
-    return function fib(n) {
-        count++
-        return n in memo
-            ? memo[n] 
-            : ( memo[n] = (n < 2 ? n : fib(n - 1) + fib(n - 2)) )
-    }
-})()
-console.log(fibonacci(10), count)  // 55 - 19
-```
+<script src="https://gist.github.com/mikunpham/d733633be3e9e87fc511dcf3fcf0ef0d.js"></script>
 
 _The same result -> Good!_
 
@@ -93,25 +50,6 @@ _The same result -> Good!_
 
 We can also genalize a memoization function, so that it can be used with other functions, not just `fibonacci` only.
 
-```javascript
-const memoizer = (func) => {
-    let memo = {}
-    return function() {
-        let args = Array.prototype.slice.call(arguments)
-        return (args in memo) ? memo[args] : ( memo[args] = func.apply(this, args) )
-    }   
-}
-
-const fibonacci = memoizer(function(n) {
-    return n < 2 ? n : fibonacci3(n - 1) + fibonacci3(n - 2)
-})
-
-const factorial = memoizer(function(n) {
-    return n < 2 ? 1 : n * factorial(n - 1)
-})
-
-console.log(fibonacci(10))  // Still 55 - 19 times if you add `count`
-console.log(factorial(10))  // 3628800 - factorial function and use memoization too!!!
-```
+<script src="https://gist.github.com/mikunpham/1e9108f12883405f4ff3d6cf6913ddbc.js"></script>
 
 
