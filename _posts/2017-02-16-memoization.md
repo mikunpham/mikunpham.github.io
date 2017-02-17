@@ -1,24 +1,12 @@
 ---
 layout: post
 title: Memoization in Javascript
-thumbnail: /assets/images/javascript.png
+thumbnail: /assets/images/memoization.jpg
 tags:
     - javascript
     - memoization
+    - optimization
 ---
 
 
-**Memoization** is a programming technique which attempts to increase a function’s performance by caching its previously computed results.
-
-```js
-let count = 0
-const fibonacci = (n) => {
-    count++
-    return n < 2 ? n : fibonacci(n - 1) + fibonacci(n - 2)
-}
-
-console.time('#Case1')
-console.log(fibonacci(20))
-console.log(`call ${count} times`)
-console.timeEnd('#Case1')
-```
+**Memoization** is a optimization technique which attempts to increase a function’s performance by caching its previously computed results. It is especially useful in recursive functions.
