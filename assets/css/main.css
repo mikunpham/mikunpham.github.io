@@ -25,11 +25,49 @@ img {
 
 code.highlighter-rouge { background: rgba(238, 238, 238, 1); padding: 2px 5px; color: rgba(77, 126, 222, 1); }
 
+header:before, header:after {
+	content: ' ';
+	display: table;
+}
+
+header:after {
+	clear: both;
+}
+
 header {
 	font-family: 'Libre Baskerville', Helvetica, serif;
 	padding: 20px 0 16px;
 	border-bottom: 1px solid #dfdfdf;
 	text-align: center;
+}
+
+header .logo {
+	float: left;
+	margin-left: 20px;
+}
+
+header .social {
+	float: right;
+	margin-right: 20px;
+	padding-top: 5px;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	user-select: none;
+}
+
+header .social li {
+	list-style: none;
+	display: inline-block;
+	margin: 0 10px;
+}
+
+header .social a {
+	color: rgba(28, 28, 28, 1);
+	font-size: 1.2em;
+}
+
+header .social a:hover {
+	color: #cba61c;
 }
 
 header .logo a {
@@ -170,6 +208,18 @@ main {
 	margin-top: 2em;
 }
 
+@media screen and (max-width: 425px) {
+	header {
+		padding: 10px 0;
+	}
+
+	header .logo, header .social {
+		float: none;
+		display: block;
+		margin: 8px 0;
+	}
+}
+
 @media screen and (max-width: 640px) {
 	header .logo h1 {
 		font-size: 1.5em;
@@ -186,7 +236,8 @@ main {
 	}
 
 	.post__title {
-		font-size: 1.8em;
+		font-size: 1.6em;
+		line-height: 34px;
 	}
 
 	footer p {
@@ -213,7 +264,7 @@ main {
 	.article__date {
 		margin: 40px 0 20px;
 	}
-} 
+}
 
 
 
