@@ -5,13 +5,15 @@
 	<title>{{ page.title }}</title>
 	<meta name="author" content="Mikun Pham" />
 	<meta name="description" content="This is mikunpham blog!" />
-
+	{% if page.tags %}
+	<meta name="keywords" content="{{ page.tags | join: ',' }}" />
+  	{% endif %}
 	<!-- Stylesheet -->
 	<link rel="stylesheet" href="{{ '/assets/css/site.min.css' | prepend: site.baseurl }}" />
 	<!--[if lt IE 9]><script async src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 	
 	<!-- Favicon -->
-	<link rel="icon" href="{{ '/assets/images/favicon.png' | prepend: site.baseurl }}">
+	<link rel="icon" href="{{ '/assets/images/favicon.png' | prepend: site.baseurl }}" />
 
 	<script>
 		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
