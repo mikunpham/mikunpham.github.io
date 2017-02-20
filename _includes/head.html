@@ -4,7 +4,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<title>{{ page.title }}</title>
 	<meta name="author" content="Mikun Pham" />
-	<meta name="description" content="This is mikunpham blog!" />
+	<meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
 	{% if page.tags %}
 	<meta name="keywords" content="{{ page.tags | join: ',' }}" />
   	{% endif %}
