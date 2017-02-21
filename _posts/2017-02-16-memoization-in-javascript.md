@@ -52,4 +52,13 @@ We can also genalize a memoization function, so that it can be used with other f
 
 <script src="https://gist.github.com/mikunpham/1e9108f12883405f4ff3d6cf6913ddbc.js"></script>
 
+## Limitations
+
+[https://www.sitepoint.com/implementing-memoization-in-javascript/](https://www.sitepoint.com/implementing-memoization-in-javascript/)
+
++ There are several things which must be kept in mind when implementing memoization. First, by storing old results, memoized functions consume additional memory.
++ The biggest limitation of memoization is that it can only be automated with functions that are referentially transparent. A function is considered referentially transparent if its output depends only on its inputs, and it does not cause any side effects.  A call to a referentially transparent function can be replaced by its return value without changing the semantics of the program.  The Fibonacci function is referentially transparent because it depends solely on the value of “n”. In the following example, the function foo() is not referentially transparent because it uses a global variable, “bar”. Since “bar” can be modified outside of foo(), there is no guarantee that the return value will remain the same for each input value. In this example, the two calls to foo() return the values two and three, even though the same arguments are passed to both calls.
+
+<script src="https://gist.github.com/mikunpham/5858d1ea97cefdd0e5b690a42cf9bdc3.js"></script>
+
 
